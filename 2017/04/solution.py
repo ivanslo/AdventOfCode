@@ -1,8 +1,12 @@
 def isValidp2( password ):
     words = password.split(' ')
-
-    # is valid if none is an anagram of the other
-    #
+    cc = []
+    for w in words:
+        key = ''.join(sorted(w))
+        if cc.__contains__(key):
+            return False
+        else:
+            cc.append(key)
     return True
 
 
