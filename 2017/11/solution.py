@@ -122,5 +122,5 @@ if __name__ == '__main__':
     line = line.rstrip()
     line = line.split(',')
 
-    print(' -- steps: %d' % steps(line))
-    print(' -- furthest: %d' %furthest(line))
+    print(' -- steps: %d, %d' % steps(line))
+    #print(' -- furthest: %d' %furthest(line))
