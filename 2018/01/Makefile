@@ -1,8 +1,9 @@
 run: main
 	cat input.txt | ./main
 
-solutions: Solutions.hs 
+solutions: Solutions.hs SolutionsImproved.hs
 	stack ghc Solutions.hs
+	stack ghc SolutionsImproved.hs
 
 main: solutions
 	stack ghc main.hs 

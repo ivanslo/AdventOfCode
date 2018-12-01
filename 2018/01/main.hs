@@ -1,4 +1,5 @@
-import Solutions
+-- import Solutions
+import SolutionsImproved
 
 main = do
     input <- getContents
