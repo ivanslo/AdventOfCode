@@ -13,7 +13,7 @@ main = do
     print("Problem 1")
     test_case 4 (solution1 $ lines input )
     print("Problem 2")
-    test_case 0 0
+    test_case 3 (solution2 $ lines input )
     return ()
 
 
