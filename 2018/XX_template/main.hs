@@ -8,6 +8,6 @@ main = do
     print( solution2 (map (toInt) $ words input ) )
 
 
-toInt :: String -> Integer
-toInt ('+':xs)  = read xs ::Integer
-toInt x         = read x ::Integer
+toInt :: String -> Int
+toInt ('+':xs)  = read xs ::Int
+toInt x         = read x ::Int

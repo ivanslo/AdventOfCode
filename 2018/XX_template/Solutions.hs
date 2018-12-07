@@ -11,8 +11,8 @@ trace' :: String -> a -> a
 trace' s a = a
 
 
-solution1 :: [Integer] -> Integer
+solution1 :: [Int] -> Int
 solution1 list = 0
 
-solution2 :: [Integer] -> Integer
+solution2 :: [Int] -> Int
 solution2 list = 0
