@@ -3,6 +3,7 @@ run: main
 
 solutions: Solutions.hs 
 	ghc Solutions.hs
+	ghc Solutions2.hs
 
 main: solutions
 	ghc main.hs 

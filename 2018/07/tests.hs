@@ -6,7 +6,7 @@
 --
 
 import Text.Printf
-import Solutions
+import Solutions2
 
 main = do
     input <- getContents

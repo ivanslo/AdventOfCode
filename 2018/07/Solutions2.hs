@@ -1,4 +1,5 @@
-module Solutions(
+
+module Solutions2(
     solution1,
     solution2
 ) where
