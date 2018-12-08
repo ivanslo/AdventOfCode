@@ -12,11 +12,10 @@ main = do
     input <- getContents
     print("Problem 1")
     test_case "CABDFE" (solution1 $ lines input)
-    -- print("Problem 2")
-    -- test_case 0 0
+    print("Problem 2")
+    test_case "15" (solution2 $ lines input)
     return ()
 
 
 test_case e r = 
     printf " [%s] - expects %s and returned %s\n" (show (e == r) :: String)  (e ::String) (r :: String)
-    
