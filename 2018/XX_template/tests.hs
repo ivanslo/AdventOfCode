@@ -9,6 +9,7 @@ import Text.Printf
 import Solutions
 
 main = do
+    input <- getContents
     print("Problem 1")
     test_case 0 0
     print("Problem 2")

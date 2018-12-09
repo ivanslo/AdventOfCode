@@ -7,8 +7,8 @@ import Debug.Trace
 
 -- enable/disable debugging
 trace' :: String -> a -> a
--- trace' s a = trace s a
-trace' s a = a
+trace' s a = trace s a
+-- trace' s a = a
 
 
 solution1 :: [Int] -> Int
