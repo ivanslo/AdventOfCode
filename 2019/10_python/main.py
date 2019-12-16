@@ -19,11 +19,14 @@ def parseFile( filename: str ) -> [(int,int)]:
 	return entries, limitX, limitY-1
 
 TEST = True
-REAL = True
+REAL = False
 ## TESTS
 if TEST:
 	input1, limX, limY  = parseFile('input_test.txt')
-	print(solution1(input1, limX, limY)) ## 5,8 -- 33
+	maxHits, pos = solution1(input1, limX, limY)
+	print(maxHits, pos)
+	
+	solution2(input1, limX, limY, pos)
 	# print(solution2(input1))
 
 ## REAL
