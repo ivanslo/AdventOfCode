@@ -1,7 +1,5 @@
-# README #
+## Advent of Code
 
+This repository contains (some) solutions to the problems published in adventofcode.com.
 
-### Advent of Code ###
-These are exercises taken from adventofcode.com.
-
-Made day by day, in different languages. The purpose is just learning & exercising.
+Done mainly to explore languages and features (haskell and python) and practice puzzle solving in general.
