@@ -63,3 +63,4 @@ In this example, a single shiny gold bag must contain 126 other bags.
 
 How many individual bags are required inside your single shiny gold bag?
 
+Your puzzle answer was 2431.
