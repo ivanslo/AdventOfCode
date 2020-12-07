@@ -3,3 +3,4 @@
 *.o
 main
 tests
+__pycache__
