@@ -8,11 +8,9 @@ main = do
     -- Problem 1
     print("Problem 1")
     test_case 25 (solution1 $ lines input )
-    test_case 25 (solution1' $ lines input )
     -- Problem 2
     print("Problem 2")
-    -- test_case 286 (solution2 $ lines input )
-    -- test_case 286 (solution2' $ lines input )
+    test_case 286 (solution2 $ lines input )
     return ()
 
 
