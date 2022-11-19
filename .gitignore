@@ -4,3 +4,10 @@
 main
 tests
 __pycache__
+
+# Rust files
+debug/
+target/
+Cargo.lock
+**/*.rs.bk
+*.pdb
