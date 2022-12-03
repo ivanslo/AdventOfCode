@@ -3,7 +3,7 @@ use std::fs;
 #[test]
 fn tests() {
     let contents = fs::read_to_string("input_test.txt").expect("Failure");
-    let input = parse(contents);
+    let input: Vec<u32> = parse(contents);
     let res_p1 = part1(&input);
     let res_p2 = part2(&input);
     assert!(res_p1 == 0);
@@ -12,17 +12,21 @@ fn tests() {
 
 fn main() {
     let contents = fs::read_to_string("input.txt").expect("Failure");
-    let input = parse<u32>(contents);
+    let input: Vec<u32> = parse<u32>(contents);
     let res_p1 = part1(&input);
     let res_p2 = part2(&input);
     println!("part 1: {res_p1}");
     println!("part 2: {res_p2}");
 }
 
-fn parse<u32>(filecontent: String) -> Vec<u32> {
+fn parse<T>(filecontent: String) -> Vec<T>
+where
+    T: FromStr + Debug,
+    <T as FromStr>::Err: std::fmt::Debug,
+{
     filecontent
         .lines()
-        .map(|x| x.parse::<u32>().unwrap())
+        .map(|x| x.parse::<T>().unwrap())
         .collect()
 }
 
