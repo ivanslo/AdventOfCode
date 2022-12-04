@@ -1,4 +1,6 @@
 use std::fs;
+use std::str::FromStr;
+use std::fmt::Debug;
 
 #[test]
 fn tests() {
@@ -12,7 +14,7 @@ fn tests() {
 
 fn main() {
     let contents = fs::read_to_string("input.txt").expect("Failure");
-    let input: Vec<u32> = parse<u32>(contents);
+    let input: Vec<u32> = parse(contents);
     let res_p1 = part1(&input);
     let res_p2 = part2(&input);
     println!("part 1: {res_p1}");
@@ -22,7 +24,7 @@ fn main() {
 fn parse<T>(filecontent: String) -> Vec<T>
 where
     T: FromStr + Debug,
-    <T as FromStr>::Err: std::fmt::Debug,
+    <T as FromStr>::Err: Debug,
 {
     filecontent
         .lines()
