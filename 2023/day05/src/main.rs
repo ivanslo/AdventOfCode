@@ -66,20 +66,14 @@ fn parse(filecontent: &str) -> ParsedInput {
 }
 
 fn get_min_location(seeds: &Vec<u64>, descriptions: &Vec<Description>) -> u64 {
-    seeds.iter().map(|initialseed| {
-        let mut seed = *initialseed;
-        descriptions.iter().for_each(|description| {
-            let map = description.maps.iter().filter(| Map { source_rs, destination_rs, range} | {
-                seed >= *source_rs && seed < *source_rs + *range
-            }).collect::<Vec<&Map>>();
-
-            match map.len() {
-                1 => { seed = map[0].destination_rs + seed - map[0].source_rs; },
-                0 => { seed = seed },
-                _ => { println!("multiple maps found!"); panic!() },
-            }
-        });
-        seed
+    seeds.iter().map(| initialseed | {
+        descriptions.iter().fold(*initialseed, |seed, description| {
+            description.maps.iter()
+                .find( | Map { source_rs, destination_rs, range} | {
+                    seed >= *source_rs && seed < *source_rs + *range
+                })
+                .map_or(seed, |m| m.destination_rs + seed - m.source_rs)
+        })
     }).min().unwrap()
 }
 
@@ -89,18 +83,21 @@ fn part1(lines: &ParsedInput) -> u64 {
 }
 
 fn part2(lines: &ParsedInput) -> u64 {
-    // let mut seeds = HashSet::<u64>::new();
+    // TO-DO: do mapping for ranges.
+    // one by one is sloooowww
+    // possibilities: 
+    // () a source fits perfectly
+    // () a source has leftover in one side (tail or head)
+    // () a source has leftover in both sides (tail and head)
+    let ( maps_input, seed_input ) = lines;
     let mut seeds = Vec::<u64>::new();
 
     println!("before {:?}", seeds.len());
-    lines.1.chunks(2).for_each( |c| {
-        (c[0]..(c[0]+c[1])).for_each(|x|{
-            // seeds.insert(x);
-            seeds.push(x);
-        })
+    seed_input.chunks(2).for_each( |c| {
+        seeds.extend(c[0]..(c[0]+c[1]));
     });
     println!("after {:?}", seeds.len());
 
-    // get_min_location(&seeds.into_iter().collect(), &lines.0)
-    46
+    get_min_location(&seeds, &maps_input)
+    // 46
 }
