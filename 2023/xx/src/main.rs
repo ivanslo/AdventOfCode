@@ -21,7 +21,7 @@ fn main() {
     println!("part 2: {res_p2}");
 }
 
-fn parse<T>(filecontent:) -> Vec<T>
+fn parse<T>(filecontent: String) -> Vec<T>
 where
     T: FromStr + Debug,
     <T as FromStr>::Err: Debug,
